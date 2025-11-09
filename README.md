@@ -1,6 +1,6 @@
 # Picture device detector
 <p align="center">
-  <img src="https://github.com/ozxmn/previews/blob/main/detect-device.gif" alt="Demo" width="70%">
+  <img src="https://github.com/ozxmn/previews/blob/main/detect-device.gif" alt="Demo" width="100%">
 </p>
 This project is a desktop application that identifies the device used to capture a digital image by analyzing image characteristics using multiple methods.
 
