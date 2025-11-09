@@ -60,7 +60,7 @@ picture_device/
 </p>
 
 4. **Detection**
-
+   * Go to the "Device detection" tab.
    * Select an image for testing.
    * Press "Analyze image" button to see the results.
 
