@@ -56,7 +56,7 @@ picture_device/
    * Select a folder with images.
    * Press "Start training" button to generate reference models for each analysis method.
 <p align="center">
-  <img src="https://github.com/ozxmn/previews/blob/main/gif.gif" alt="Demo" width="70%">
+  <img src="https://github.com/ozxmn/previews/blob/main/gif.gif" alt="Demo" width="100%">
 </p>
 
 4. **Detection**
@@ -70,13 +70,13 @@ picture_device/
 Additional Training
 
 <p align="center">
-  <img src="https://github.com/ozxmn/previews/blob/main/training.png" alt="Demo" width="70%">
+  <img src="https://github.com/ozxmn/previews/blob/main/training.png" alt="Demo" width="100%">
 </p>
 
 "About" Tab
 
 <p align="center">
-  <img src="https://github.com/ozxmn/previews/blob/main/about-tab.png" alt="Demo" width="70%">
+  <img src="https://github.com/ozxmn/previews/blob/main/about-tab.png" alt="Demo" width="100%">
 </p>
 
 ## Authors
