@@ -81,5 +81,5 @@ Additional Training
 
 ## Authors
 
-   * Mansur Ozaman: https://github.com/ozxmn
+   **Mansur Ozaman**: https://github.com/ozxmn
 
