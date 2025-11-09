@@ -1,5 +1,7 @@
 # Picture device detector
-
+<p align="center">
+  <img src="https://github.com/ozxmn/previews/blob/main/detect-device.gif" alt="Demo" width="70%">
+</p>
 This project is a desktop application that identifies the device used to capture a digital image by analyzing image characteristics using multiple methods.
 
 ## Overview
@@ -25,7 +27,6 @@ The results from these three methods are fused to produce a combined prediction 
 picture_device/
 ├── cnn_model.py
 ├── database.py
-├── forensic_analysis.py
 ├── fusion_analysis.py
 ├── gui.py
 ├── jpeg_analyzer.py
@@ -54,15 +55,31 @@ picture_device/
 
    * Select a folder with images.
    * Press "Start training" button to generate reference models for each analysis method.
+<p align="center">
+  <img src="https://github.com/ozxmn/previews/blob/main/gif.gif" alt="Demo" width="70%">
+</p>
 
 4. **Detection**
 
    * Select an image for testing.
    * Press "Analyze image" button to see the results.
 
+
+## Gallery
+
+Additional Training
+
+<p align="center">
+  <img src="https://github.com/ozxmn/previews/blob/main/training.png" alt="Demo" width="70%">
+</p>
+
+"About" Tab
+
+<p align="center">
+  <img src="https://github.com/ozxmn/previews/blob/main/about-tab.png" alt="Demo" width="70%">
+</p>
+
 ## Authors
 
-Mansur 
-
-[GitHub link](https://github.com/ozxmn)
+   * Mansur Ozaman: https://github.com/ozxmn
 
