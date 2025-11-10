@@ -139,8 +139,14 @@ def enhance_device_detection(exif_data: dict, image_path: str) -> dict:
     ]
     device_info = {}
     for exif_key, info_key in device_sources:
-        if exif_key in exif_data and exif_data[exif_key] and exif_data[exif_key] not in ['', 'Unknown', 'undefined']:
-            device_info[info_key] = exif_data[exif_key]
+        if exif_key in exif_data and exif_data[exif_key]:
+            value = str(exif_data[exif_key])
+            # ✅ Clean up Xiaomi / non-printable characters
+            value = value.encode("utf-8", "ignore").decode("utf-8", "ignore")
+            value = value.replace("\x00", "").replace("\u0000", "").strip()
+            if value not in ["", "Unknown", "undefined", "null"]:
+                device_info[info_key] = value
+
     final_model = "Unknown_Device"
     if 'Model' in device_info:
         final_model = device_info['Model']
@@ -189,6 +195,12 @@ def enhance_device_detection(exif_data: dict, image_path: str) -> dict:
 def clean_device_name(device_name: str) -> str:
     if not device_name or device_name == 'Unknown_Device':
         return 'Unknown_Device'
+
+    # ✅ Remove hidden / null characters (fix for Xiaomi and others)
+    cleaned = str(device_name)
+    cleaned = cleaned.encode("utf-8", "ignore").decode("utf-8", "ignore")
+    cleaned = cleaned.replace("\x00", "").replace("\u0000", "").strip()
+
     replacements = {
         ' ': '_',
         '-': '_',
@@ -201,19 +213,22 @@ def clean_device_name(device_name: str) -> str:
         '__': '_',
         '___': '_'
     }
-    cleaned = device_name.strip()
     for old, new in replacements.items():
         cleaned = cleaned.replace(old, new)
+
     garbage_patterns = [
         'undefined', 'null', 'unknown', 'default', 
         'front_camera', 'back_camera', 'main_camera', 'rear_camera'
     ]
     for pattern in garbage_patterns:
         cleaned = cleaned.replace(pattern, '')
+
     cleaned = cleaned.strip('_')
     if not cleaned:
         return 'Unknown_Device'
-    return cleaned
+
+    # ✅ Normalize to uppercase to avoid duplicates (e.g. m2101k7bg → M2101K7BG)
+    return cleaned.upper()
 
 def extract_exif_data(image_path: str) -> dict:
     return extract_exif_data_enhanced(image_path)
@@ -326,3 +341,4 @@ def convert_to_standard_format(image_path: str, output_path: str = None) -> str:
     except Exception as e:
         print(f"Error converting image {image_path}: {e}")
     return image_path
+
