@@ -1,4 +1,4 @@
-# Picture device detector
+# Source Camera Identification App
 <p align="center">
   <img src="https://github.com/ozxmn/previews/blob/main/detect-device.gif" alt="Demo" width="100%">
 </p>
